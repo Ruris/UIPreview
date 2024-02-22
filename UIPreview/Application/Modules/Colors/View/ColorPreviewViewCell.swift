@@ -36,6 +36,8 @@ class ColorPreviewViewCell: UICollectionViewCell {
         contentView.addSubview(colorView)
         contentView.addSubview(nameLabel)
         
+        colorView.layer.cornerRadius = 5.0
+        
         nameLabel.font = .systemFont(ofSize: 12)
         nameLabel.textAlignment = .center
     }
