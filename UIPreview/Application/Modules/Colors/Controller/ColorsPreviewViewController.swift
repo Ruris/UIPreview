@@ -17,11 +17,33 @@ class ColorsPreviewViewController: UIViewController {
             ("systemRed", .systemRed), ("systemGreen", .systemGreen),
             ("systemBlue", .systemBlue), ("systemOrange", .systemOrange),
             ("systemPink", .systemPink), ("systemTeal", .systemTeal),
-            ("systemPurple", .systemPurple), ("systemBrown", .systemBrown)
+            ("systemPurple", .systemPurple), ("systemBrown", .systemBrown),
+            ("systemYellow", .systemYellow), ("systemIndigo", .systemIndigo),
+            ("systemGray", .systemGray), ("systemGray2", .systemGray2),
+            ("systemGray3", .systemGray3), ("systemGray4", .systemGray4),
+            ("systemGray5", .systemGray5), ("systemGray6", .systemGray6),
+            ("lightText", .lightText), ("darkText", .darkText),
+            ("label", .label), ("secondaryLabel", .secondaryLabel),
+            ("tertiaryLabel", .tertiaryLabel), ("quaternaryLabel", .quaternaryLabel),
+            ("link", .link), ("placeholderText", .placeholderText),
+            ("separator", .separator), ("opaqueSeparator", .opaqueSeparator),
+            ("systemBackground", .systemBackground),
+            ("secondarySystemBackground", .secondarySystemBackground),
+            ("tertiarySystemBackground", .tertiarySystemBackground),
+            ("systemGroupedBackground", .systemGroupedBackground),
+            ("secondarySystemGroupedBackground", .secondarySystemGroupedBackground),
+            ("tertiarySystemGroupedBackground", .tertiarySystemGroupedBackground),
+            ("systemFill", .systemFill),
+            ("secondarySystemFill", .secondarySystemFill),
+            ("quaternarySystemFill", .quaternarySystemFill),
+            ("tertiarySystemFill", .tertiarySystemFill),
         ]
+        
+
         if #available(iOS 15, *) {
             colors.append(contentsOf: [
-                ("systemCyan", .systemCyan), ("systemMint", .systemMint)
+                ("systemCyan", .systemCyan), ("systemMint", .systemMint),
+                ("tintColor", .tintColor)
             ])
         }
         return colors
@@ -44,6 +66,7 @@ class ColorsPreviewViewController: UIViewController {
     func setupUI() {
         title = "Colors"
         view.addSubview(collectionView)
+        collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
         collectionView.register(ColorPreviewViewCell.self, forCellWithReuseIdentifier: "cell")
     }
